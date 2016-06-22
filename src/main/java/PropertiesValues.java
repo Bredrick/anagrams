@@ -1,12 +1,9 @@
 package main.java;
-import java.io.FileNotFoundException;
+import java.io.FileInputStream;
 import java.io.IOException;
-import java.io.InputStream;
 import java.util.Properties;
 
 public class PropertiesValues {
-	String result = "";
-	InputStream inputStream;
 	
 	private String sampleLocation = "";
  
@@ -17,17 +14,14 @@ public class PropertiesValues {
 	/* Load setting from config.properties file.
 	 * Currently used just for location of sample text file. */
 	public void loadValues() throws IOException {
+		FileInputStream inputStream = null;
 		try {
 			Properties prop = new Properties();
-			String propertiesFile = "config.properties";
+			String propertiesFile = "./config.properties";
  
-			inputStream = getClass().getClassLoader().getResourceAsStream(propertiesFile);
+			inputStream = new FileInputStream(propertiesFile);
  
-			if (inputStream != null) {
-				prop.load(inputStream);
-			} else {
-				throw new FileNotFoundException("Configuration file '" + propertiesFile + "' not found.");
-			}
+			prop.load(inputStream);
 
 			sampleLocation = prop.getProperty("inputFile");
 			

@@ -16,7 +16,7 @@ public class ProductCalculations {
 		}
 		
 	    for (char c : word.toLowerCase().toCharArray()) {
-	        if (c < 'a') {
+	        if (c < 'a' | c > 'z') {
 	            return -1;
 	        }
 	        int pos = c - 'a';
