@@ -3,3 +3,10 @@ sudo: false
 script: mvn clean verify
 jdk:
   - oraclejdk8
+deploy:
+  provider: releases
+  api_key: "d4591321e7a3533bfa4244e9653d5d716e38afad"
+  file: "anagrams-1.0-SNAPSHOT.jar"
+  skip_cleanup: true
+  overwrite: true
+  
