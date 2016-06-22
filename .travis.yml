@@ -9,4 +9,5 @@ deploy:
   file: "anagrams-1.0-SNAPSHOT.jar"
   skip_cleanup: true
   overwrite: true
-  
+  on:
+    tags: true
