@@ -5,7 +5,7 @@ jdk:
   - oraclejdk8
 deploy:
   provider: releases
-  api_key: "d4591321e7a3533bfa4244e9653d5d716e38afad"
+  api_key: "7bec6392cf28675389d003416c2d7dd9012d54d5"
   file: "anagrams-1.0-SNAPSHOT.jar"
   skip_cleanup: true
   overwrite: true
